@@ -6,7 +6,7 @@ output "x" {
   value = var.x
 }
 
-variable "1" {
+variable "l" {
 
   default = [
   10,
@@ -15,10 +15,10 @@ variable "1" {
   ]
 }
 
-output "1" {
+output "l" {
   value = var.1
 }
 
-output "12" {
+output "l2" {
   value = var.1[1]
 }
