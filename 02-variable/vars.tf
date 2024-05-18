@@ -39,3 +39,8 @@ variable "y" {}
 output "y" {
   value = var.y
 }
+
+variable "url" {}
+output "url" {
+  value = var.url
+}
