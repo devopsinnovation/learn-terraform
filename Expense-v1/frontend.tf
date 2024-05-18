@@ -5,6 +5,6 @@ resource "aws_instance" "frontendserver" {
   subnet_id = "subnet-042cbd7641215cdce"
 
   tags = {
-    name="frontendserver"
+    Name="frontendserver"
   }
 }
