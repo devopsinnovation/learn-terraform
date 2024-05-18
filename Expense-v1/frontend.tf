@@ -6,7 +6,3 @@ resource "aws_instance" "frontend" {
     name="frontendserver"
   }
 }
-
-resource "aws_iam_role" "workstation-role" {
-  assume_role_policy = "workstation-role"
-}
