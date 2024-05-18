@@ -34,6 +34,8 @@ output "course_name" {
   value = var.m["course"]
 
 }
+
+variable "y" {}
 output "y" {
   value = var.y
 }
