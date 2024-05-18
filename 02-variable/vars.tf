@@ -22,3 +22,15 @@ output "l" {
 output "l2" {
   value = var.l[1]
 }
+
+variable "m" {
+  default = {
+    course= "Devops"
+    trainer = "John"
+  }
+
+}
+output "course_name" {
+  value = var.m["course"]
+
+}
