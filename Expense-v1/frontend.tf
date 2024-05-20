@@ -1,4 +1,4 @@
-resource "aws_instance" "ecc2-nodes" {
+resource "aws_instance" "ec2-nodes" {
   for_each = var.components
   ami           = "ami-090252cbe067a9e58"
   instance_type = each.value["instance_type"]
@@ -12,13 +12,13 @@ resource "aws_instance" "ecc2-nodes" {
 
 variable "components" {
   default = {
-    frontend ={
+    frontendserver ={
       instance_type = "t2.small"
     }
-    backend ={
+    backendserver ={
       instance_type = "t2.small"
     }
-    mysql ={
+    mysqlserver ={
       instance_type = "t2.small"
     }
   }
