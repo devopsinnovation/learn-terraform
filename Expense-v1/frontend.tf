@@ -1,4 +1,4 @@
-resource "aws_instance" "frontendserver" {
+resource "aws_instance" "ecc2-nodes" {
   for_each = var.components
   ami           = "ami-090252cbe067a9e58"
   instance_type = each.value["instance_type"]
