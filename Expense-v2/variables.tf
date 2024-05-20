@@ -1,12 +1,12 @@
 variable "components" {
   default = {
-    frontendserver ={
+    frontend ={
       instance_type = "t2.small"
     }
-    backendserver ={
+    backend ={
       instance_type = "t2.small"
     }
-    mysqlserver ={
+    mysql ={
       instance_type = "t2.small"
     }
   }
@@ -18,4 +18,11 @@ variable "ami" {
 
 variable "vpc_security_group_ids" {
   default = ["sg-0706ec15d6ace75e5"]
+}
+variable "zone_id" {
+  default =  "Z1015094164SK9DW3BYUT"
+
+}
+variable "ttl" {
+  default = 5
 }
