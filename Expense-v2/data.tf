@@ -14,5 +14,5 @@ data "aws_security_group" "allowall" {
 }
 
 output "securitygroupid" {
-  value = data.aws_security_group.allowall
+  value = data.aws_security_group.allowall.id
 }
