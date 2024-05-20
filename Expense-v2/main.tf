@@ -5,5 +5,7 @@ module "app" {
   ami    = var.ami
   vpc_security_group_ids = var.vpc_security_group_ids
   instance_type = each.value["instance_type"]
+  ttl = var.ttl
+  zone_id = var.zone_id
 }
 
