@@ -1,16 +1,25 @@
 resource "aws_instance" "frontendserver" {
-  count =  length(var.component)
+  for_each = var.components
   ami           = "ami-090252cbe067a9e58"
-  instance_type = "t2.small"
+  instance_type = each.value["instance_type"]
   subnet_id = "subnet-042cbd7641215cdce"
   vpc_security_group_ids = ["sg-0706ec15d6ace75e5"]
 
   tags = {
-    Name= var.component[count.index]
+    Name= each.key
   }
 }
 
-variable "component" {
-
-  default = ["frontendserver", "backendserver", "mysqlserver"]
+variable "components" {
+  default = {
+    frontend ={
+      instance_type = "t2.small"
+    }
+    backend ={
+      instance_type = "t2.small"
+    }
+    mysql ={
+      instance_type = "t2.small"
+    }
+  }
 }
