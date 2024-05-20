@@ -12,3 +12,7 @@ data "aws_security_group" "allowall" {
     values = ["launch-wizard-16"]
   }
 }
+
+output "securitygroupid" {
+  value = data.aws_security_group.allowall
+}
