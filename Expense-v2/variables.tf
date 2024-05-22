@@ -19,3 +19,7 @@ variable "ami" {
 variable "ttl" {
   default = 5
 }
+
+variable "vpc_security_group_ids" {
+  default = data.aws_security_group.allowall.id
+}
