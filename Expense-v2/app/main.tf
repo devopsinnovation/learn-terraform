@@ -9,7 +9,7 @@ resource "aws_instance" "node" {
   }
 }
 resource "aws_route53_record" "www" {
-  name    = "${var.Name}-dev-devopsinnovation.online"
+  name    = "${var.Name}-dev.devopsinnovation.online"
   type    = "A"
   zone_id = var.zone_id
   ttl     = var.ttl
