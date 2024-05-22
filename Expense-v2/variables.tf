@@ -16,12 +16,6 @@ variable "ami" {
   default = "ami-090252cbe067a9e58"
 }
 
-variable "vpc_security_group_ids" {
-  default = ["sg-0706ec15d6ace75e5"]
-}
-
-
-
 variable "ttl" {
   default = 5
 }
