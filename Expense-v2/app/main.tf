@@ -15,3 +15,10 @@ resource "aws_route53_record" "www" {
   ttl     = var.ttl
   records = [aws_instance.node.private_ip]
 }
+
+resource "null_resource" "provisionerexecute" {
+  depends_on = [aws_route53_record.www]
+  provisioner "local-exec" {
+    command = "sleep 120; cd /home/ec2-user/ansible-expense-dry-code ; ansible-playbook -i ${aws_instance.node.private_ip}, -e ansible_user=ec2-user -e ansible_password=DevOps321 -e role_name=${var.Name} -e env=dev expense.yml"
+  }
+}
